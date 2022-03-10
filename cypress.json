@@ -1,4 +1,5 @@
 {
+    "baseUrl": "http://localhost:5516/",
     "defaultCommandTimeout": 10000,
     "reporter": "cypress-mochawesome-reporter",
     "reporterOptions": {

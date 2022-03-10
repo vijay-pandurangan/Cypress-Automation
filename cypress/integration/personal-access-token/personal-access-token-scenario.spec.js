@@ -7,7 +7,9 @@ const loginPage = new LoginPage()
 const personalAccessTokenPage = new PersonalAccessTokenPage()
 
 beforeEach(() => {
-    cy.visit("http://localhost:5516/#/login")
+    let url = Cypress.config().baseUrl
+    cy.clearCookies()
+    cy.visit(url)
     loginPage.login('admin', 'admin')
 })
 

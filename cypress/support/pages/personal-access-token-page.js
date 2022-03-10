@@ -45,8 +45,8 @@ export default class PersonalAccessTokenPage {
         cy.get('.token-success .MuiAlert-message').should('be.visible')
         //cy.get('.MuiButton-startIcon.MuiButton-iconSizeMedium').should('be.visible')
         //cy.get('.MuiButton-startIcon.MuiButton-iconSizeMedium').click()
-        cy.get('.token-success > .dot-alert-banner > .MuiAlert-action').contains('Copy token').should('be.visible')
-        cy.get('.token-success > .dot-alert-banner > .MuiAlert-action').contains('Copy token').click()
+        //cy.get('.token-success > .dot-alert-banner > .MuiAlert-action').invoke('show').contains('Copy token').should('be.visible')
+        cy.get('.token-success > .dot-alert-banner > .MuiAlert-action').invoke('show').contains('Copy token').click()
         return this
     }
 }

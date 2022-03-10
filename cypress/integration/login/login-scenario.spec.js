@@ -4,7 +4,9 @@ import Mainmenu from '../../support/pages/main-menu'
 const loginPage = new LoginPage()
 const mainMenu = new Mainmenu()
 beforeEach(() => {
-    cy.visit("http://localhost:5516/#/login")
+    let url = Cypress.config().baseUrl
+    cy.visit(url)
+    cy.clearCookies()
 })
 
 describe('Login scenario test cases', () => {
