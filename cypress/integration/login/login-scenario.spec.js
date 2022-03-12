@@ -4,8 +4,7 @@ import Mainmenu from '../../support/pages/main-menu'
 const loginPage = new LoginPage()
 const mainMenu = new Mainmenu()
 beforeEach(() => {
-    let url = Cypress.config().baseUrl
-    cy.visit(url)
+    cy.visit('/')
     cy.clearCookies()
 })
 

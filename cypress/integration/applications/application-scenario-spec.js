@@ -9,9 +9,9 @@ const loginPage = new LoginPage()
 const applicationPage = new ApplicationPage()
 
 beforeEach(() => {
-    let url = Cypress.config().baseUrl
+    //let url = Cypress.config().baseUrl
     cy.clearCookies()
-    cy.visit(url)
+    cy.visit('/')
     loginPage.login('admin', 'admin')
 })
 
