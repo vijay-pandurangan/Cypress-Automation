@@ -14,12 +14,18 @@ export default class EnvironmentPage {
 
     addNewEnvironment(environmentName,stageName) {
         //cy.get('input[placeholder="Add..."]').clear()
-        cy.get('.xl-react-widget-input-component input[placeholder="Add..."]').type(environmentName)
+        cy.get('.xl-react-components-input input[placeholder="Add..."]').wait(1000).type(environmentName)
         cy.get('input[placeholder="Select stage..."]').should('be.visible')
         cy.get('input[placeholder="Select stage..."]').type(stageName)
-        cy.get(`div[title=${stageName}] span div`).click()
+        cy.get(`div[title=${stageName}] div:nth-child(1)`).should('be.visible').click({force: true})
+        return this
 
+    }
 
+    clickCreate() {
+        cy.get('.action-toolbar-actions .MuiButton-label').contains('Create').should('be.visible')
+        cy.get('.action-toolbar-actions .MuiButton-label').contains('Create').should('be.visible').click()
+        return this
     }
 
 }

@@ -12,10 +12,11 @@ beforeEach(() => {
 
 describe('Evironments related test cases', () => {
 
-    it('add a new application', () => {
-        var environmentName = 'env'
+    it('add a new environment', () => {
+        var environmentName = `env-${Math.floor(Math.random() * 9999)}`
         environmentPage.goToEnvironmentPage()
         environmentPage.clickNewEnvironment()
         environmentPage.addNewEnvironment(environmentName, 'Production')
+        environmentPage.clickCreate()
     })
 })
