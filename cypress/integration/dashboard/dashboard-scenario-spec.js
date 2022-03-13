@@ -8,7 +8,8 @@ const loginPage = new LoginPage()
 const dashboardPage = new DashboardPage()
 
 beforeEach(() => {
-    cy.visit("http://localhost:5516/#/login")
+    cy.clearCookies()
+    cy.visit('/')
     loginPage.login('admin', 'admin')
 })
 

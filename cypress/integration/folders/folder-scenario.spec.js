@@ -8,14 +8,15 @@ const folderPage = new FolderPage()
 
 
 beforeEach(() => {
-    cy.visit("http://localhost:5516/#/login")
+    cy.clearCookies()
+    cy.visit('/')
+    loginPage.login('admin', 'admin')
 })
 
 describe("Folder page related test cases", () => {
 
     it('add new folder', () => {
         var foldername = `auto-${Math.floor(Math.random() * 9999)}`
-        loginPage.login('admin', 'admin')
         folderPage.goToFolder()
         folderPage.addFolder(foldername)
 
@@ -25,7 +26,6 @@ describe("Folder page related test cases", () => {
     it('open folder and create a new template', () => {
         var foldername = `auto-${Math.floor(Math.random() * 9999)}`
         var templatename = `template-${Math.floor(Math.random() * 9999)}`
-        loginPage.login('admin', 'admin')
         folderPage.goToFolder()
         folderPage.openFolderAndAddNewTemplate(foldername,templatename)
 

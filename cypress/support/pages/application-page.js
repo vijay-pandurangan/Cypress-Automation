@@ -36,13 +36,13 @@ export default class ApplicationPage {
         cy.get('input[placeholder="Filter by application..."]').clear()
         cy.get('input[placeholder="Filter by application..."]').type(applicationName)
         cy.get(`div[title=${applicationName}]`).should('be.visible')
+        return this
     }
 
     deleteApplication(applicationName) {
         cy.get('.actions-container.col-xs-2 span[data-test="delete-action"]').click()
         cy.get('.modal-footer .xl-react-button').contains('Delete').click()
         cy.get('.no-data-message').invoke('show').should('be.visible')
-        //.should('be.visble')
         return this
        
         
